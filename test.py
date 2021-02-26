@@ -6,11 +6,11 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 
-driver=webdriver.Chrome('/chromedriver')
+driver=webdriver.Chrome('/Users/casper.local/Desktop/Dev/job_listing/chromedriver')
 #print(driver.title)
 driver.get('https://crypto.jobs')
 def single_parse(job_Link_element,main_dr):
-    print(job_Link_element)
+    print(job_Link_element.text)
     main_dr
     #main_window = main_dr.current_window_handle
     # Save the window opener (current window, do not mistaken with tab... not the same)
