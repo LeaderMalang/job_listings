@@ -25,7 +25,10 @@ class CryptojobsSpider(scrapy.Spider):
         nextUrl=response.css('ul.pagination li:last-of-type a::attr(href)').get()
         if nextUrl:
             nextPageUrl=response.urljoin(nextUrl)
-            yield scrapy.Request(url=nextPageUrl, callback=self.parse)
+            headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0'}
+            yield scrapy.Request(url=nextPageUrl, callback=self.parse,
+                                 headers=headers,
+                                 method='GET')
 
 
 
